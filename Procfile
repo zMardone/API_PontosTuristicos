@@ -1,0 +1,1 @@
+web: guicorn pontos_turisticos.wsgi --log-file -
