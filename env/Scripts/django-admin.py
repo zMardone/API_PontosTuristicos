@@ -1,4 +1,4 @@
-#!c:\users\mardone\desktop\pessoal\curso2\env\scripts\python.exe
+#!c:\users\mardone\desktop\pessoal\api - pontos turisticos\env\scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Mardone\Desktop\Pessoal\Curso2\env"
+VIRTUAL_ENV="C:\Users\Mardone\Desktop\Pessoal\API - Pontos turisticos\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
