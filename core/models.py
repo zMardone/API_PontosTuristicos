@@ -17,5 +17,10 @@ class PontoTuristico(models.Model):
 
     foto = models.ImageField(upload_to='pontos_turisticos', null=True, blank=True)
 
+    # exemplo de campo customizado, é possivel chamar ele no serializer fields
+    @property
+    def campo_customizado(self):
+        return (self.nome + '' + self.descricao)
+
     def __str__(self):
         return self.nome
