@@ -10,11 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import os
 from pathlib import Path
-from typing import cast
-from decouple import config
-import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-(5s8124%pah_5pjeqn47_tw#5gu4!stj%om9=ay88vd+(d+0hh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
-ALLOWED_HOSTS = ['pontos-turisticos-udemy.herokuapp.com', 'localhost:8000']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -85,10 +81,12 @@ WSGI_APPLICATION = 'pontos_turisticos.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-from dj_database_url import parse as dburl
-default_dburl = 'sqlite://' + os.path.join(BASE_DIR, 'db.sqlite3')
-
-DATABASES = { 'default': config('DATABASE_URL', default=default_dburl, cast=dburl)}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
@@ -137,9 +135,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = 'imagens'
 
 MEDIA_URL = '/media/'
-
-STATICFILES_DIRS = [ 
-    os.path.join(BASE_DIR, "home", "static"),
-]
-
-django_heroku.settings(locals())

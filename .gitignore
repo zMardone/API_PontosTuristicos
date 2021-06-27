@@ -1,2 +1,16 @@
-env
-*.sqlite3
+__pycache__/
+
+# Environments
+.env
+env/
+.venv
+venv/
+ENV/
+
+
+# IDE
+.vscode/
+
+# db
+db.sqlite3
+staticfiles/
