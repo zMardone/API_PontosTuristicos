@@ -15,7 +15,7 @@ class PontoTuristico(models.Model):
     avaliacoes = models.ManyToManyField(Avaliacao)
     enderecos = models.ForeignKey(Endereco, on_delete=models.CASCADE, null=True, blank=True)
 
-    foto = models.ImageField(upload_to='pontos_turisticos', null=True, blank=True)
+    # foto = models.ImageField(upload_to='pontos_turisticos', null=True, blank=True)
 
     # exemplo de campo customizado, é possivel chamar ele no serializer fields
     @property
